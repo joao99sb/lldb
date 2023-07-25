@@ -16,12 +16,14 @@ public:
 
 int square(int value)
 {
+  int oops = 1 / 0;
   return value * value;
 }
 
-
-namespace LLDBDemo{
-  int add(int a, int b ){
+namespace LLDBDemo
+{
+  int add(int a, int b)
+  {
     return a + b;
   }
 }

@@ -4,6 +4,8 @@
 #include <thread>
 #include <functional>
 #include <sys/stat.h> // For stat function on Unix-based systems
+#include <unistd.h>   // Para as funções fork(), execvp(), getpid() e usleep()
+#include <sys/wait.h>
 
 // Função que será executada quando a mudança no arquivo for detectada
 void fileChangedCallback()
@@ -50,8 +52,21 @@ int main(int argc, char *argv[])
     return 1;
   }
 
+  pid_t child_pid = fork();
+
+  if (child_pid == -1)
+  {
+    std::cerr << "Erro ao criar o processo filho." << std::endl;
+    return 1;
+  }
   std::string filePath = argv[1]; // Use the provided file path from command-line argument
 
+  
+  
+  
+  
+  
+  
   // Usando uma lambda como callback
   observeFileChange(filePath, []()
                     { fileChangedCallback(); });
