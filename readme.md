@@ -53,6 +53,11 @@ Inspecting Variables:
   Current Line:
   (lldb) frame select
   (lldb) fr s
+    
+  Variable Format:
+  /x -> hex
+  /t -> bin
+
 
 Backtrace and Frames:
   Backtrace:
